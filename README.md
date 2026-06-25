@@ -106,3 +106,7 @@ A base final e construida em etapas para manter rastreabilidade entre os dados o
 
 O processo comeca com a coleta dos arquivos publicos da Policia Rodoviaria Federal. Sao utilizados os dados de acidentes agrupados por ocorrencia e por pessoa/veiculo, pois eles reunem informacoes do local, data, tipo de acidente, causa, condicoes da via, veiculos envolvidos e estado fisico dos participantes.
 
+### 2. Filtragem para o estado da Paraiba
+
+Depois da consolidacao inicial, a base e filtrada para manter apenas registros cuja unidade federativa e a Paraiba. Essa etapa delimita o estudo ao recorte geografico do projeto e garante que as analises considerem somente sinistros em rodovias federais localizadas no estado.
+
