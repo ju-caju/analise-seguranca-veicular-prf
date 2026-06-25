@@ -121,3 +121,7 @@ Com as familias de modelo identificadas, os veiculos sao comparados com a base F
 ### 5. Enriquecimento com Latin NCAP
 
 Apos o enriquecimento com FIPE, a base e cruzada com os resultados do Latin NCAP. A associacao considera a familia do modelo e a proximidade do ano de fabricacao com o ano do teste disponivel. Quando ha correspondencia, sao adicionados campos relacionados a estrelas, protocolo do teste, airbags e confianca do pareamento.
+
+### 6. Geracao da base final enriquecida
+
+Ao final do pipeline, as informacoes originais da PRF, a familia de modelo, os campos FIPE e os campos Latin NCAP sao reunidos em uma unica base enriquecida. Essa base final preserva os identificadores e variaveis do acidente, permitindo relacionar caracteristicas do sinistro, do local, dos envolvidos e dos veiculos com a gravidade das ocorrencias analisadas.
