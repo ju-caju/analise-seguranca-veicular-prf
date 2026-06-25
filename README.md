@@ -98,4 +98,11 @@ As análises pretendidas estão divididas em três grupos principais.
 
 #### 3. Análise de segurança veicular
 
+## Preparacao da base final enriquecida
+
+A base final e construida em etapas para manter rastreabilidade entre os dados originais da PRF e os campos adicionados por FIPE e Latin NCAP.
+
+### 1. Coleta dos dados da PRF
+
+O processo comeca com a coleta dos arquivos publicos da Policia Rodoviaria Federal. Sao utilizados os dados de acidentes agrupados por ocorrencia e por pessoa/veiculo, pois eles reunem informacoes do local, data, tipo de acidente, causa, condicoes da via, veiculos envolvidos e estado fisico dos participantes.
 
