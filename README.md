@@ -114,3 +114,7 @@ Depois da consolidacao inicial, a base e filtrada para manter apenas registros c
 
 Em seguida, o campo textual de marca/modelo informado pela PRF e padronizado. A normalizacao reduz abreviacoes, prefixos e variacoes de versao para aproximar veiculos de uma mesma familia de modelo, como Volkswagen/Gol, Toyota/Hilux ou Chevrolet/Onix. Essa etapa torna possivel comparar os registros da PRF com as bases externas, mesmo quando o texto original nao segue um padrao unico.
 
+### 4. Enriquecimento com FIPE
+
+Com as familias de modelo identificadas, os veiculos sao comparados com a base FIPE. O objetivo e obter uma estimativa de valor medio de mercado por marca, modelo e ano, registrando tambem niveis de confianca ou faixas de preco quando ha mais de uma versao plausivel. Esses valores sao usados como variaveis de analise, nao como preco exato de cada veiculo envolvido.
+
