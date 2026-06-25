@@ -106,3 +106,6 @@ A base final e construida em etapas para manter rastreabilidade entre os dados o
 
 O processo comeca com a coleta dos arquivos publicos da Policia Rodoviaria Federal. Sao utilizados os dados de acidentes agrupados por ocorrencia e por pessoa/veiculo, pois eles reunem informacoes do local, data, tipo de acidente, causa, condicoes da via, veiculos envolvidos e estado fisico dos participantes.
 
+### 2. Consolidacao inicial da base
+
+Depois da coleta, os arquivos sao consolidados para reunir registros de ocorrencias, pessoas e veiculos em uma estrutura unica de analise. Essa etapa organiza as informacoes de origem e prepara a base para as etapas seguintes de normalizacao e enriquecimento.
