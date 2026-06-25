@@ -110,3 +110,7 @@ O processo comeca com a coleta dos arquivos publicos da Policia Rodoviaria Feder
 
 Depois da consolidacao inicial, a base e filtrada para manter apenas registros cuja unidade federativa e a Paraiba. Essa etapa delimita o estudo ao recorte geografico do projeto e garante que as analises considerem somente sinistros em rodovias federais localizadas no estado.
 
+### 3. Normalizacao de marca e modelo
+
+Em seguida, o campo textual de marca/modelo informado pela PRF e padronizado. A normalizacao reduz abreviacoes, prefixos e variacoes de versao para aproximar veiculos de uma mesma familia de modelo, como Volkswagen/Gol, Toyota/Hilux ou Chevrolet/Onix. Essa etapa torna possivel comparar os registros da PRF com as bases externas, mesmo quando o texto original nao segue um padrao unico.
+
