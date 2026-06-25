@@ -117,3 +117,7 @@ Em seguida, o campo textual de marca/modelo informado pela PRF e padronizado. A 
 ### 4. Enriquecimento com FIPE
 
 Com as familias de modelo identificadas, os veiculos sao comparados com a base FIPE. O objetivo e obter uma estimativa de valor medio de mercado por marca, modelo e ano, registrando tambem niveis de confianca ou faixas de preco quando ha mais de uma versao plausivel. Esses valores sao usados como variaveis de analise, nao como preco exato de cada veiculo envolvido.
+
+### 5. Enriquecimento com Latin NCAP
+
+Apos o enriquecimento com FIPE, a base e cruzada com os resultados do Latin NCAP. A associacao considera a familia do modelo e a proximidade do ano de fabricacao com o ano do teste disponivel. Quando ha correspondencia, sao adicionados campos relacionados a estrelas, protocolo do teste, airbags e confianca do pareamento.
