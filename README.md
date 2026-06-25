@@ -109,3 +109,7 @@ O processo comeca com a coleta dos arquivos publicos da Policia Rodoviaria Feder
 ### 2. Consolidacao inicial da base
 
 Depois da coleta, os arquivos sao consolidados para reunir registros de ocorrencias, pessoas e veiculos em uma estrutura unica de analise. Essa etapa organiza as informacoes de origem e prepara a base para as etapas seguintes de normalizacao e enriquecimento.
+
+### 3. Normalizacao de marca e modelo
+
+Em seguida, o campo textual de marca/modelo informado pela PRF e padronizado. A normalizacao reduz abreviacoes, prefixos e variacoes de versao para aproximar veiculos de uma mesma familia de modelo, como Volkswagen/Gol, Toyota/Hilux ou Chevrolet/Onix. Essa etapa torna possivel comparar os registros da PRF com as bases externas, mesmo quando o texto original nao segue um padrao unico.
