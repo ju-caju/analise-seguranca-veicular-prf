@@ -157,6 +157,15 @@ https://veiculos.fipe.org.br/
 | `fipe_metodo_match` | Função ou método computacional empregado para realizar o cruzamento com a FIPE | `Merge do Pandas` |
 | `fipe_fonte` | Fonte de extração dos dados de valor de mercado | `Tabela FIPE` |
 | `observacao_fipe` | Notas de texto livre sobre exceções ou detalhes do vínculo com a FIPE | `Modelo mapeado por similaridade de ano` |
+| `ilesos` | Indicador binário se a pessoa envolvida ficou ilesa (sem ferimentos) | `0` ou `1` |
+| `feridos_leves` | Indicador binário se a pessoa sofreu ferimentos leves | `0` ou `1` |
+| `feridos_graves` | Indicador binário se a pessoa sofreu ferimentos graves | `0` ou `1` |
+| `mortos` | Indicador binário se a pessoa foi a óbito em decorrência do sinistro | `0` ou `1` |
+| `latitude` | Coordenada geográfica (latitude) do local do sinistro | `-25,8529` |
+| `longitude` | Coordenada geográfica (longitude) do local do sinistro | `-49,0007` |
+| `regional` | Superintendência Regional da PRF responsável pelo trecho onde ocorreu o sinistro | `SPRF-PR` |
+| `delegacia` | Delegacia da PRF responsável pela área do sinistro | `DEL01-PR` |
+| `uop` | Unidade Operacional da PRF responsável pelo trecho | `UOP04-DEL01-PR` |
 
 ## Disponibilização dos Dados
 
