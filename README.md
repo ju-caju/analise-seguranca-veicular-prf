@@ -79,7 +79,7 @@ https://veiculos.fipe.org.br/
 | Coluna | Descrição | Exemplo |
 |---|---|---|
 | `ano_base` | Ano de referência do registro dos dados | `2010` |
-| `arquivo_origem_enriquecido` | Caminho relativo do arquivo de origem processado e enriquecido | `prf_analise/data/processed/<br>multiyear/final_by_year/2010/<br>acidentes_enriquecido.csv` |
+| `arquivo_origem_enriquecido` | Caminho relativo do arquivo de origem processado e enriquecido | `prf_analise/data/processed/`<br>`multiyear/final_by_year/2010/`<br>`acidentes_enriquecido.csv` |
 | `id` | Identificador único do sinistro/acidente | `636034` |
 | `pesid` | Identificador único da pessoa envolvida no sinistro | `1906759` |
 | `data_inversa` | Data da ocorrência do sinistro (formato DD/MM/AAAA) | `01/01/2010` |
