@@ -74,6 +74,10 @@ A Tabela FIPE é utilizada para aproximar o valor médio de mercado dos veículo
 Fonte:  
 https://veiculos.fipe.org.br/
 
+## Conjunto de Dados
+
+A base final utilizada neste projeto é uma versão enriquecida dos dados de sinistros da Polícia Rodoviária Federal. Além das informações originais sobre local, data, horário, tipo de acidente, causa, condições da via, veículos e envolvidos, a base inclui variáveis adicionais obtidas pelo cruzamento com fontes externas, como estimativa de valor de mercado pela Tabela FIPE e avaliações de segurança veicular do Latin NCAP. Dessa forma, é possível investigar possíveis relações entre as características dos veículos e a gravidade dos acidentes registrados.
+
 ## Dicionário de Dados
 
 | Coluna | Descrição | Exemplo |
