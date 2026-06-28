@@ -76,7 +76,53 @@ https://veiculos.fipe.org.br/
 
 ## Conjunto de Dados
 
-A base final utilizada neste projeto é uma versão enriquecida dos dados de sinistros da Polícia Rodoviária Federal. Além das informações originais sobre local, data, horário, tipo de acidente, causa, condições da via, veículos e envolvidos, a base inclui variáveis adicionais obtidas pelo cruzamento com fontes externas, como estimativa de valor de mercado pela Tabela FIPE e avaliações de segurança veicular do Latin NCAP. Dessa forma, é possível investigar possíveis relações entre as características dos veículos e a gravidade dos acidentes registrados.
+A base final utilizada neste projeto é uma versão enriquecida dos dados de sinistros da Polícia Rodoviária Federal. Além das informações originais sobre local, data, horário, tipo de acidente, causa, condições da via, veículos e envolvidos, a base inclui variáveis adicionais obtidas pelo cruzamento com fontes externas, como estimativa de valor de mercado pela Tabela FIPE e avaliações de segurança veicular do Latin NCAP.
+
+## Enriquecimento dos dados
+
+Um dos diferenciais do projeto é o enriquecimento da base original da PRF.
+
+A base da PRF informa o modelo do veículo em formato textual, mas esse campo pode apresentar variações, abreviações e inconsistências. Por isso, o projeto realiza uma etapa de normalização para tentar identificar a família do modelo do veículo.
+
+Exemplos:
+
+- `VW/GOL 1.0` e `VW/GOL SPECIAL` podem ser associados à família `VOLKSWAGEN/GOL`;
+- `I/TOYOTA HILUX` pode ser associado à família `TOYOTA/HILUX`;
+- `GM/ONIX` pode ser associado à família `CHEVROLET/ONIX`.
+
+Após essa normalização, os veículos são comparados com as bases externas da FIPE e do Latin NCAP.
+
+## Preparação da base final enriquecida
+
+A base final é construída em etapas para manter rastreabilidade entre os dados originais da PRF e os campos adicionados por FIPE e Latin NCAP.
+
+### 1. Coleta dos dados da PRF
+
+O processo começa com a coleta dos arquivos públicos da Polícia Rodoviária Federal. São utilizados os dados de acidentes agrupados por ocorrência e por pessoa/veículo, pois eles reúnem informações do local, data, tipo de acidente, causa, condições da via, veículos envolvidos e estado físico dos participantes.
+
+### 2. Consolidação inicial da base
+
+Depois da coleta, os arquivos são consolidados para reunir registros de ocorrências, pessoas e veículos em uma estrutura única de análise. Essa etapa organiza as informações de origem e prepara a base para as etapas seguintes de normalização e enriquecimento.
+
+### 3. Normalização de marca e modelo
+
+Em seguida, o campo textual de marca/modelo informado pela PRF é padronizado. A normalização reduz abreviações, prefixos e variações de versão para aproximar veículos de uma mesma família de modelo, como Volkswagen/Gol, Toyota/Hilux ou Chevrolet/Onix. Essa etapa torna possível comparar os registros da PRF com as bases externas, mesmo quando o texto original não segue um padrão único.
+
+### 4. Enriquecimento com FIPE
+
+Com as famílias de modelo identificadas, os veículos são comparados com a base FIPE. O objetivo é obter uma estimativa de valor médio de mercado por marca, modelo e ano, registrando também níveis de confiança ou faixas de preço quando há mais de uma versão plausível. Esses valores são usados como variáveis de análise, não como preço exato de cada veículo envolvido.
+
+### 5. Enriquecimento com Latin NCAP
+
+Após o enriquecimento com FIPE, a base é cruzada com os resultados do Latin NCAP. A associação considera a família do modelo e a proximidade do ano de fabricação com o ano do teste disponível. Quando há correspondência, são adicionados campos relacionados a estrelas, protocolo do teste, airbags e confiança do pareamento.
+
+### 6. Geração da base final enriquecida
+
+Ao final do pipeline, as informações originais da PRF, a família de modelo, os campos FIPE e os campos Latin NCAP são reunidos em uma única base enriquecida. Essa base final preserva os identificadores e variáveis do acidente, permitindo relacionar características do sinistro, do local, dos envolvidos e dos veículos com a gravidade das ocorrências analisadas.
+
+## Disponibilização dos Dados
+
+- *Link de Acesso aos Dados:* [Acesse a pasta do Google Drive aqui](https://drive.google.com/file/d/1hm489_DjbC63kHTPpaCd0gST-enV_Yjh/view?usp=sharing)
 
 ## Dicionário de Dados
 
@@ -170,59 +216,3 @@ A base final utilizada neste projeto é uma versão enriquecida dos dados de sin
 | `regional` | Superintendência Regional da PRF responsável pelo trecho onde ocorreu o sinistro | `SPRF-PR` |
 | `delegacia` | Delegacia da PRF responsável pela área do sinistro | `DEL01-PR` |
 | `uop` | Unidade Operacional da PRF responsável pelo trecho | `UOP04-DEL01-PR` |
-
-## Disponibilização dos Dados
-
-- *Link de Acesso aos Dados:* [Acesse a pasta do Google Drive aqui](https://drive.google.com/file/d/1hm489_DjbC63kHTPpaCd0gST-enV_Yjh/view?usp=sharing)
-
-## Enriquecimento dos dados
-
-Um dos diferenciais do projeto é o enriquecimento da base original da PRF.
-
-A base da PRF informa o modelo do veículo em formato textual, mas esse campo pode apresentar variações, abreviações e inconsistências. Por isso, o projeto realiza uma etapa de normalização para tentar identificar a família do modelo do veículo.
-
-Exemplos:
-
-- `VW/GOL 1.0` e `VW/GOL SPECIAL` podem ser associados à família `VOLKSWAGEN/GOL`;
-- `I/TOYOTA HILUX` pode ser associado à família `TOYOTA/HILUX`;
-- `GM/ONIX` pode ser associado à família `CHEVROLET/ONIX`.
-
-Após essa normalização, os veículos são comparados com as bases externas da FIPE e do Latin NCAP.
-
-## Possíveis análises
-
-As análises pretendidas estão divididas em três grupos principais.
-
-#### 1. Análise dos sinistros
-
-#### 2. Análise dos veículos
-
-#### 3. Análise de segurança veicular
-
-## Preparação da base final enriquecida
-
-A base final é construída em etapas para manter rastreabilidade entre os dados originais da PRF e os campos adicionados por FIPE e Latin NCAP.
-
-### 1. Coleta dos dados da PRF
-
-O processo começa com a coleta dos arquivos públicos da Polícia Rodoviária Federal. São utilizados os dados de acidentes agrupados por ocorrência e por pessoa/veículo, pois eles reúnem informações do local, data, tipo de acidente, causa, condições da via, veículos envolvidos e estado físico dos participantes.
-
-### 2. Consolidação inicial da base
-
-Depois da coleta, os arquivos são consolidados para reunir registros de ocorrências, pessoas e veículos em uma estrutura única de análise. Essa etapa organiza as informações de origem e prepara a base para as etapas seguintes de normalização e enriquecimento.
-
-### 3. Normalização de marca e modelo
-
-Em seguida, o campo textual de marca/modelo informado pela PRF é padronizado. A normalização reduz abreviações, prefixos e variações de versão para aproximar veículos de uma mesma família de modelo, como Volkswagen/Gol, Toyota/Hilux ou Chevrolet/Onix. Essa etapa torna possível comparar os registros da PRF com as bases externas, mesmo quando o texto original não segue um padrão único.
-
-### 4. Enriquecimento com FIPE
-
-Com as famílias de modelo identificadas, os veículos são comparados com a base FIPE. O objetivo é obter uma estimativa de valor médio de mercado por marca, modelo e ano, registrando também níveis de confiança ou faixas de preço quando há mais de uma versão plausível. Esses valores são usados como variáveis de análise, não como preço exato de cada veículo envolvido.
-
-### 5. Enriquecimento com Latin NCAP
-
-Após o enriquecimento com FIPE, a base é cruzada com os resultados do Latin NCAP. A associação considera a família do modelo e a proximidade do ano de fabricação com o ano do teste disponível. Quando há correspondência, são adicionados campos relacionados a estrelas, protocolo do teste, airbags e confiança do pareamento.
-
-### 6. Geração da base final enriquecida
-
-Ao final do pipeline, as informações originais da PRF, a família de modelo, os campos FIPE e os campos Latin NCAP são reunidos em uma única base enriquecida. Essa base final preserva os identificadores e variáveis do acidente, permitindo relacionar características do sinistro, do local, dos envolvidos e dos veículos com a gravidade das ocorrências analisadas.
